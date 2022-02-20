@@ -9,17 +9,11 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
     public function index() {
-        $data = [
-            'msg' => 'これはBladeを利用したサンプルだよ。',
-        ];
-        return view('hello.index', $data);
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.index', ['data'=>$data]);
     }
 
     public function post(Request $request) {
-        $msg = $request->msg;
-        $data = [
-            'msg' => 'こんにちは、' . $msg . 'さん!'
-        ];
-        return view('hello.index', $data);
+        return view('hello.index', ['msg' => $request->msg]);
     }
 }
