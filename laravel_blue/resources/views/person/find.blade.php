@@ -1,5 +1,7 @@
 @extends('layouts.helloapp')
 
+@section('title', 'Person.find')
+
 @section('menubar')
     @parent
     検索ページ
